@@ -5,10 +5,22 @@
 I have always had a passion for reading, however, I, like many others, have a hard time finding the time to do so. And with the debut of BookTok, my list of books to read (TBR) is longer than ever. I wanted to see what kind of books I have been getting recommended from TikTok since I have been saving them all to my Goodreads, so I decided to put my new data analysis skills to the test.
 
 ## Web Scraping
-I scraped my data from my Goodreads TBR, stored it in a data frame, and then exported it to Tableau for visualization. 
+To get this data, I thought I would try out web scraping. I needed data on each title, author, genre, and average rating, however, my Goodreads TBR page only displays the title, author, and average rating. 
+<br>
+<img align="center" src="images/Want_to_Read_example.png">
+<br>
 
-## Visualization
-<a href="https://public.tableau.com/views/TBRBreakdown/TBRDashboard?:language=en-US&:display_count=n&:origin=viz_share_link">Link to Visualization</a> 
+How do I find the genres? I can’t just scrape the TBR page. However, when I looked at the HTML, I could scrape the URL of each title, which will take me to the book’s page where genres are located. Knowing this, I could outline my plan:
+
+1. Create a function that will scrape each URL from my TBR and store it in a list called book_urls
+2. Create another function that will process each URL, grabbing the title, author, genres, and average rating from Goodreads (I  will test this to see if each worked correctly), storing them in a data frame
+
+The Jupyter notebooks containing this code are included in the repository under Web Scraping.ipynb and Splitting Genres.ipynb
+<br>
+
+## Tableau visualization - <a href="https://public.tableau.com/views/TBRBreakdown/TBRDashboard?:language=en-US&:display_count=n&:origin=viz_share_link">here</a>
+After scraping and exporting my data, I created an interactive Tableau dashboard for this project to visualize trends in genre, book length, authors, and diversity. 
+<img align="center" src="images/Book_Tableau.png">
 
 ## Conclusion
 
